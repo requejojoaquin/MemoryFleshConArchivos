@@ -1,0 +1,17 @@
+{
+         "version": "0.2.0",
+         "configurations": [
+             {
+                 "type": "java",
+                 "name": "SERVIDOR",
+                 "request": "launch",
+                 "mainClass": "red.Server"
+             },
+             {
+                "type": "java",
+                "name": "APP (Cliente)",
+                "request": "launch",
+                "mainClass": "Main"
+            }
+        ]
+    }

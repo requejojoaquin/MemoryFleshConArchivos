@@ -1,0 +1,5 @@
+1|2026-05-28 16:35:37|1|Crear Cuenta|joaquin ha creado una cuenta con el correo: requejo.joaquin.c@gmail.com
+2|2026-05-28 16:36:07|1|Iniciar Sesion|joaquin ha iniciado sesion
+3|2026-06-03 21:17:57|1|Login|joaquin entro
+4|2026-06-03 21:18:38|2|Registro|pablo se anoto
+5|2026-06-03 21:19:10|2|Login|pablo entro
