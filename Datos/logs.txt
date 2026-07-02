@@ -22,3 +22,5 @@
 22|2026-06-26 13:10:53|5|Clave|hola123 cambio clave
 23|2026-06-26 13:11:20|5|Login|hola123 entro
 24|2026-06-26 13:11:44|5|Borrar|hola123 se fue
+25|2026-07-01 21:23:29|4|Login|pepe entro
+26|2026-07-01 21:24:02|4|Clave|pepe cambio clave

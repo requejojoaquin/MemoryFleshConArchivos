@@ -124,7 +124,7 @@ public class UsuarioDAO {
                 ArrayList<String> lineas = GestorArchivos.leerLineas(GestorArchivos.USUARIOS_FILE);
                 for (String linea : lineas) {
                     String[] partes = linea.split("\\" + GestorArchivos.SEP);
-                    if (partes.length >= 5) {
+                    if (partes.length >= 5) { 
                         if (partes[2].equalsIgnoreCase(mail.trim()) && partes[3].trim().equals(contrasena.trim())) {
                             int id = Integer.parseInt(partes[0].trim());
                             u = new Usuario(id, partes[1], partes[2], Integer.parseInt(partes[4].trim()));
@@ -132,7 +132,7 @@ public class UsuarioDAO {
                         }
                     }
                 }
-            } finally {
+            } finally { 
                 GestorArchivos.semUsuarios.release();
             }
             if (u != null) {
@@ -220,59 +220,59 @@ public class UsuarioDAO {
 
     //-----------------Proceso Eliminacion de Usuario
     // borrar cuenta
-    public static Resultado eliminarCuenta(int idUsuario, String contrasena) {
-        boolean borrado = false;
-        String nombre = "";
-        try {
-            GestorArchivos.semUsuarios.acquire();
+        public static Resultado eliminarCuenta(int idUsuario, String contrasena) {
+            boolean borrado = false;
+            String nombre = "";
             try {
-                ArrayList<String> lineas = GestorArchivos.leerLineas(GestorArchivos.USUARIOS_FILE);
-                ArrayList<String> nuevas = new ArrayList<String>();
-                for (String l : lineas) {
-                    String[] p = l.split("\\" + GestorArchivos.SEP);
-                    if (p.length >= 5 && Integer.parseInt(p[0].trim()) == idUsuario) {
-                        if (p[3].equals(contrasena)) {
-                            borrado = true;
-                            nombre = p[1];
-                        } else {
-                            return new Resultado(false, "Clave mal");
-                        }
-                    } else {
-                        nuevas.add(l);
-                    }
-                }
-                if (borrado) {
-                    GestorArchivos.escribirTodo(GestorArchivos.USUARIOS_FILE, nuevas);
-                }
-            } finally {
-                GestorArchivos.semUsuarios.release();
-            }
-
-            if (borrado) {
-                GestorArchivos.semMemorias.acquire();
+                GestorArchivos.semUsuarios.acquire();
                 try {
-                    ArrayList<String> mems = GestorArchivos.leerLineas(GestorArchivos.MEMORIAS_FILE);
-                    ArrayList<String> nuevasMems = new ArrayList<String>();
-                    for (String m : mems) {
-                        String[] pm = m.split("\\" + GestorArchivos.SEP);
-                        if (pm.length >= 6 && Integer.parseInt(pm[5].trim()) != idUsuario) {
-                            nuevasMems.add(m);
+                    ArrayList<String> lineas = GestorArchivos.leerLineas(GestorArchivos.USUARIOS_FILE);
+                    ArrayList<String> nuevas = new ArrayList<String>();
+                    for (String l : lineas) {
+                        String[] p = l.split("\\" + GestorArchivos.SEP);
+                        if (p.length >= 5 && Integer.parseInt(p[0].trim()) == idUsuario) {
+                            if (p[3].equals(contrasena)) {
+                                borrado = true;
+                                nombre = p[1];
+                            } else {
+                                return new Resultado(false, "Clave mal");
+                            }
+                        } else {
+                            nuevas.add(l);
                         }
                     }
-                    GestorArchivos.escribirTodo(GestorArchivos.MEMORIAS_FILE, nuevasMems);
+                    if (borrado) {
+                        GestorArchivos.escribirTodo(GestorArchivos.USUARIOS_FILE, nuevas);
+                    }
                 } finally {
-                    GestorArchivos.semMemorias.release();
+                    GestorArchivos.semUsuarios.release();
                 }
-                registrarLog(idUsuario, "Borrar", nombre + " se fue");
-                return new Resultado(true, "Ok");
+//
+                if (borrado) {
+                    GestorArchivos.semMemorias.acquire();
+                    try {
+                        ArrayList<String> mems = GestorArchivos.leerLineas(GestorArchivos.MEMORIAS_FILE);
+                        ArrayList<String> nuevasMems = new ArrayList<String>();
+                        for (String m : mems) {
+                            String[] pm = m.split("\\" + GestorArchivos.SEP);
+                            if (pm.length >= 6 && Integer.parseInt(pm[5].trim()) != idUsuario) {
+                                nuevasMems.add(m);
+                            }
+                        }
+                        GestorArchivos.escribirTodo(GestorArchivos.MEMORIAS_FILE, nuevasMems);
+                    } finally {
+                        GestorArchivos.semMemorias.release();
+                    }
+                    registrarLog(idUsuario, "Borrar", nombre + " se fue");
+                    return new Resultado(true, "Ok");
+                }
+            } catch (Exception e) {
+                System.err.println("Error en eliminarCuenta: " + e.getMessage());
             }
-        } catch (Exception e) {
-            System.err.println("Error en eliminarCuenta: " + e.getMessage());
+            return new Resultado(false, "Error");
         }
-        return new Resultado(false, "Error");
-    }
 
-    // buscar
+    // buscar por nombre
     public static ArrayList<Usuario> buscarUsuariosByName(String query) {
         ArrayList<Usuario> lista = new ArrayList<Usuario>();
         try {

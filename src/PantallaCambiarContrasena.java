@@ -182,8 +182,6 @@ public class PantallaCambiarContrasena extends JFrame {
             ok = false;
         }
 
-        if (!ok) return;
-
         if (!nueva.matches(".*[^a-zA-Z0-9].*")) {
             errorNueva.setText("Debe contener un carácter especial. Ej: @$!%*?&/-_.");
             return;
