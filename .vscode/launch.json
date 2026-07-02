@@ -1,0 +1,24 @@
+{
+         "version": "0.2.0",
+         "configurations": [
+            {
+                "type": "java",
+                "name": "LaboratorioConcurrencia",
+                "request": "launch",
+                "mainClass": "red.LaboratorioConcurrencia",
+                "projectName": "MemoryFLesh_8e424265"
+            },
+            {
+                "type": "java",
+                "name": "SERVIDOR",
+                "request": "launch",
+                "mainClass": "red.Server"
+            },
+            {
+                "type": "java",
+                "name": "APP (Cliente)",
+                "request": "launch",
+                "mainClass": "Main"
+            }
+        ]
+    }

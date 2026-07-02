@@ -1,0 +1,24 @@
+1|2026-05-28 16:35:37|1|Crear Cuenta|joaquin ha creado una cuenta con el correo: requejo.joaquin.c@gmail.com
+2|2026-05-28 16:36:07|1|Iniciar Sesion|joaquin ha iniciado sesion
+3|2026-06-03 21:17:57|1|Login|joaquin entro
+4|2026-06-03 21:18:38|2|Registro|pablo se anoto
+5|2026-06-03 21:19:10|2|Login|pablo entro
+6|2026-06-03 21:34:44|3|Registro|marecos se anoto
+7|2026-06-03 21:36:07|4|Registro|pepe se anoto
+8|2026-06-03 21:37:05|3|Login|marecos entro
+9|2026-06-05 11:00:24|5|Registro|hola123 se anoto
+10|2026-06-05 11:00:56|5|Login|hola123 entro
+11|2026-06-10 21:55:06|3|Login|marecos entro
+12|2026-06-10 21:56:13|3|Crear Memoria|ID: 1 - Titulo: Nigga mi primer zap
+13|2026-06-10 22:06:47|4|Login|pepe entro
+14|2026-06-10 22:09:07|4|Login|pepe entro
+15|2026-06-10 22:09:35|3|Login|marecos entro
+16|2026-06-10 22:10:20|4|Login|pepe entro
+17|2026-06-10 22:12:06|4|Crear Memoria|pepe creo - ID: 2 - Titulo: Maite - Desc: LABURAAAAAAAAAAA
+18|2026-06-25 14:37:59|4|Login|pepe entro
+19|2026-06-25 14:38:32|4|Clave|pepe cambio clave
+20|2026-06-25 14:38:59|4|Login|pepe entro
+21|2026-06-26 13:09:52|5|Login|hola123 entro
+22|2026-06-26 13:10:53|5|Clave|hola123 cambio clave
+23|2026-06-26 13:11:20|5|Login|hola123 entro
+24|2026-06-26 13:11:44|5|Borrar|hola123 se fue
